@@ -1,0 +1,65 @@
+site_name: InowDocs — Panduan Produksi Inowtech
+site_description: Dokumentasi stack, panduan setup, workflow & SOP, dan troubleshooting untuk tim produksi Inowtech.
+site_author: Tim Produksi Inowtech
+repo_name: inowdocs
+repo_url: https://github.com/inowtech/inowdocs
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: id
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Mode Gelap
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Mode Terang
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+    - toc.integrate
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+nav:
+  - Beranda: index.md
+  - Mapping Stack:
+      - stack/index.md
+      - stack/laravel.md
+      - stack/cloudflare.md
+      - stack/database.md
+  - Panduan Setup:
+      - setup/index.md
+      - setup/install-laravel.md
+      - setup/cloudflare-tunnel.md
+  - Workflow & SOP:
+      - workflow/index.md
+      - workflow/git-flow.md
+      - workflow/testing.md
+  - Troubleshooting:
+      - troubleshooting/index.md
+      - troubleshooting/common-errors.md
