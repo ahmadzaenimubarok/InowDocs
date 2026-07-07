@@ -19,6 +19,3 @@ detail setup tiap komponen.
 - [Laravel](laravel.md)
 - [Cloudflare](cloudflare.md)
 - [Database](database.md)
-
-!!! info "Milestone"
-    Halaman ini termasuk **m1 — Mapping Stack** pada KPI dokumentasi.

@@ -2,7 +2,7 @@ site_name: InowDocs — Panduan Produksi Inowtech
 site_description: Dokumentasi stack, panduan setup, workflow & SOP, dan troubleshooting untuk tim produksi Inowtech.
 site_author: Tim Produksi Inowtech
 repo_name: inowdocs
-repo_url: https://github.com/inowtech/inowdocs
+repo_url: https://github.com/ahmadzaenimubarok/InowDocs
 edit_uri: edit/main/docs/
 
 theme:

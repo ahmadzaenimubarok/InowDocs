@@ -18,6 +18,3 @@ panduan setup, workflow & SOP kerja, hingga catatan troubleshooting.
 2. Jalankan `mkdocs serve` untuk preview lokal.
 3. Push ke branch `main` → Cloudflare Pages otomatis deploy.
 
-!!! tip "Catatan"
-    Setiap halaman yang selesai dibuat dan diverifikasi bisa dicatat ke KPI
-    dokumentasi (m1–m4) di tracker Kang Ahmad.
