@@ -47,19 +47,23 @@ markdown_extensions:
 
 nav:
   - Beranda: index.md
-  - Mapping Stack:
-      - stack/index.md
-      - stack/laravel.md
-      - stack/cloudflare.md
-      - stack/database.md
-  - Panduan Setup:
-      - setup/index.md
-      - setup/install-laravel.md
-      - setup/cloudflare-tunnel.md
-  - Workflow & SOP:
-      - workflow/index.md
-      - workflow/git-flow.md
-      - workflow/testing.md
-  - Troubleshooting:
-      - troubleshooting/index.md
-      - troubleshooting/common-errors.md
+
+  - Global:
+      - Onboarding: setup/onboarding.md
+      - Stack Overview: stack/index.md
+      - Database: stack/database.md
+      - Cloudflare: stack/cloudflare.md
+      - Cloudflare Tunnel: setup/cloudflare-tunnel.md
+      - Troubleshooting: troubleshooting/common-errors.md
+
+  - Git:
+      - Git Flow: workflow/git-flow.md
+      - Code Review SOP: workflow/code-review.md
+      - Deployment SOP: workflow/deployment.md
+      - Rollback & Incident: workflow/rollback.md
+
+  - Laravel:
+      - Stack Laravel: stack/laravel.md
+      - Install Laravel: setup/install-laravel.md
+      - Environments: workflow/environments.md
+      - Testing: workflow/testing.md
