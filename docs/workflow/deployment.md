@@ -1,20 +1,20 @@
 # Deployment SOP
 
-Panduan resmi untuk promote kode dari `develop` ke production (`main`).
+Panduan untuk promote kode dari `develop` ke production (`main`).
 
 ## Kapan Deploy?
 
-Deploy ke production **hanya** dilakukan jika:
+Deploy ke production dilakukan jika:
 
 - [ ] Semua fitur sudah di-test (lihat [Testing](testing.md))
-- [ ] Semua PR sudah di-review dan merged ke `develop`
+- [ ] Fitur sudah di-merge ke `develop`
 - [ ] Tidak ada issue open yang bersifat blocker
 - [ ] Sudah disetujui lead / PIC project
 
 ## Alur Deploy
 
 ```text
-feature/* → develop → (staging) → main → production
+feature/* → develop → main → production
 ```
 
 ### 1. Final Check di `develop`
@@ -27,28 +27,23 @@ php artisan test
 
 Pastikan semua test hijau sebelum lanjut.
 
-### 2. Buat PR `develop` → `main`
-
-- Beri judul: `release: vX.Y.Z` atau `release: nama-fitur`
-- Cantumkan changelog singkat di body PR
-- Minta review dari minimal 1 orang sebelum merge
-
-### 3. Checklist Sebelum Merge ke `main`
-
-- [ ] Test hijau di CI / lokal
-- [ ] Tidak ada file `.env` atau secret ter-commit
-- [ ] Migration sudah diuji di DB bersih
-- [ ] `composer.lock` sudah di-commit jika ada perubahan dependency
-- [ ] Versi semver di-update jika relevan
-
-### 4. Merge & Deploy
-
-Setelah merge ke `main`:
+### 2. Merge `develop` ke `main`
 
 ```bash
 git checkout main
 git pull origin main
+git merge develop
+git push origin main
 ```
+
+### 3. Checklist Sebelum Push
+
+- [ ] Test hijau di lokal
+- [ ] Tidak ada file `.env` atau secret ter-commit
+- [ ] Migration sudah diuji
+- [ ] `composer.lock` sudah di-commit jika ada perubahan dependency
+
+### 4. Deploy ke Server
 
 Di server production:
 
@@ -81,10 +76,13 @@ Untuk perbaikan mendesak di production:
 git checkout main
 git checkout -b hotfix/nama-masalah
 # ... fix ...
-git commit -m "fix: deskripsi singkat"
+git commit -m "bugfix: deskripsi singkat"
+git checkout main
+git merge hotfix/nama-masalah
+git push origin main
 ```
 
-Buat PR langsung ke `main`, lalu setelah merge, sync balik ke `develop`:
+Sync balik ke `develop`:
 
 ```bash
 git checkout develop
