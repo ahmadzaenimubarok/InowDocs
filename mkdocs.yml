@@ -54,7 +54,9 @@ nav:
       - Database: stack/database.md
       - Cloudflare: stack/cloudflare.md
       - Cloudflare Tunnel: setup/cloudflare-tunnel.md
-      - Troubleshooting: troubleshooting/common-errors.md
+      - Troubleshooting:
+          - Common Errors: troubleshooting/common-errors.md
+          - Short URL Bloat: troubleshooting/short-url-bloat.md
 
   - Git:
       - Git Flow: workflow/git-flow.md
